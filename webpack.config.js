@@ -26,5 +26,5 @@ module.exports = {
      minimize: false
    }
     externals: nodeModules,
-    devtool: 'sourcemap'
+    devtool: 'inline-source-map'
 };
