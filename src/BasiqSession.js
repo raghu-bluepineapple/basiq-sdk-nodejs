@@ -6,7 +6,7 @@ const Session = function (apiKey, apiVersion) {
         return new Session(apiKey, apiVersion);
     }
 
-    apiVersion = apiVersion || "1.0";
+    apiVersion = apiVersion || "2.0";
 
     let token = null;
 
@@ -14,6 +14,7 @@ const Session = function (apiKey, apiVersion) {
 
     this.sessionTimestamp = null;
 
+    console.log("creating API instance with header");
     this.API = (new API("https://au-api.basiq.io")).setHeader("Authorization", "Basic " + apiKey).setHeader("basiq-version", apiVersion);
 
     this.expired = function () {
@@ -37,6 +38,7 @@ const Session = function (apiKey, apiVersion) {
 
                 res(true);
             }).catch(function (err) {
+                    console.log("Error getting bearer token" + err.message, err);
                 rej(err);
             });
         });
