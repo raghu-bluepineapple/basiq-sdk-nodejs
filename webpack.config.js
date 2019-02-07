@@ -22,6 +22,9 @@ module.exports = {
         library: 'library',
         libraryTarget: 'umd'
     },
+    optimization: {
+     minimize: false
+   }
     externals: nodeModules,
     devtool: 'sourcemap'
 };
