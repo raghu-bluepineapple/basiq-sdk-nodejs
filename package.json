@@ -4,7 +4,8 @@
   "description": "Node.js SDK Package for Basiq's API",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/webpack/bin/webpack.js && ./node_modules/uglify-es/bin/uglifyjs --compress --mangle --output dist/index.js -- dist/index.js && cp dist/index.js index.js && cp dist/index.js.map index.js.map",
+    "buildx": "./node_modules/webpack/bin/webpack.js && ./node_modules/uglify-es/bin/uglifyjs --compress --mangle --output dist/index.js -- dist/index.js && cp dist/index.js index.js && cp dist/index.js.map index.js.map",
+    "build": "./node_modules/webpack/bin/webpack.js --output dist/index.js -- dist/index.js && cp dist/index.js index.js && cp dist/index.js.map index.js.map",
     "lint": "./node_modules/.bin/eslint .",
     "test": "test"
   },
